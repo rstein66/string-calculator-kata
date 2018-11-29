@@ -5,7 +5,7 @@ require 'string_calculator'
 describe StringCalculator do
 
   describe '#add' do
-    calculator =StringCalculator.new
+    calculator = StringCalculator.new
 
     it 'returns 0 if no parameter is provided' do
       result = calculator.add()
@@ -53,8 +53,12 @@ describe StringCalculator do
     end
 
     it 'raises a NegativesNotAllowed error if input includes a negative number' do
-      expect{ calculator.add("1,4,-1") }.to raise_error(NegativesNotAllowedError)
+      expect{ calculator.add("1,4,-1") }.to raise_error(NegativesError)
     end
 
+    it 'returns the sum of numbers that are represented as either ints or floats' do
+      result = calculator.add("100,2.5,5.25")
+      expect(result).to eql(107.75)
+    end
   end
 end
