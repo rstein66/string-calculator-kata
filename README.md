@@ -12,7 +12,7 @@ The following is a TDD Kata, an exercise in coding, refactoring and test-first, 
     - [Step 3: handle new lines between numbers :white_check_mark:](#step-3-handle-new-lines-between-numbers-white_check_mark)
     - [Step 4: support different delimiters :white_check_mark:](#step-4-support-different-delimiters-white_check_mark)
     - [Step 5: negative numbers :white_check_mark:](#step-5-negative-numbers-white_check_mark)
-    - [Step 6: ignore big numbers :x:](#step-6-ignore-big-numbers-x)
+    - [Step 6: ignore big numbers :white_check_mark:](#step-6-ignore-big-numbers-white_check_mark)
 - [General requirements](#general-requirements)
 
 <!-- /MarkdownTOC -->
@@ -58,7 +58,7 @@ For example ``add("1,4,-1")`` should throw an exception with the message ``"nega
 
 If there are multiple negatives, show all of them in the exception message.
 
-### Step 6: ignore big numbers :x:  
+### Step 6: ignore big numbers :white_check_mark:  
 Numbers bigger than 1000 should be ignored, so adding 2 + 1001  = 2
 
 ## General requirements  

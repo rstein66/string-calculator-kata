@@ -26,6 +26,7 @@ class StringCalculator
     return 0 if numbers.empty?
 
     numbers.map! { |string| numerify(string) }
+    numbers.delete_if { |number| 1000 < number }
     numbers.sum
   end
 end
