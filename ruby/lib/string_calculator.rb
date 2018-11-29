@@ -4,25 +4,21 @@ end
 class StringCalculator
 
   def add(argument = '')
-    numbers = argument.gsub(/\n/, ',')
-    numbers = numbers.gsub(/;/, ',')
-    numbers = numbers.gsub(%r(/), ',')
+    numbers = argument.gsub(/[^-0-9]/, ',')
     numbers = numbers.split(',')
-    # puts numbers
-    if numbers.length == 0
-      0
-    elsif numbers.length == 1
-      argument.to_i
-    else
-      sum = 0
-      numbers.each do |n|
-        if n.to_i < 0
-          raise NegativesNotAllowedError.new("< negatives not allowed: #{n} >")
-        end
+
+    return 0 if numbers.empty?
+
+    sum = 0
+    numbers.each do |n|
+      if n.to_i < 0
+        raise NegativesNotAllowedError.new("< negatives not allowed: #{n} >")
+      elsif n.to_i < 1000
         sum += n.to_i
       end
-      sum
     end
+    sum
+
   end
 
 end

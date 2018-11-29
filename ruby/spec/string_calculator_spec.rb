@@ -56,5 +56,10 @@ describe StringCalculator do
       expect{ calculator.add("1,4,-1") }.to raise_error(NegativesNotAllowedError)
     end
 
+    it 'returns the sum of numbers only smaller than 1000 if string containing several numbers' do
+      result = calculator.add("10002,3,10")
+      expect(result).to eql(13)
+    end
+
   end
 end
